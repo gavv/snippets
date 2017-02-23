@@ -1,30 +1,37 @@
-# Pulseaudio usage examples
+# PulseAudio usage examples
 
 ### Overview
 
 There are several types of snippets here:
 
-* *Playback client*
+* **D-Bus client**
 
-    Standalone program that sends samples to pulseaudio.
+    Standalone program that uses PulseAudio D-Bus API.
 
-* *Source*
+* **Playback client**
 
-    Pulseaudio module (shared library) that runs thread which implements timing and periodically generates samples and writes them to connected *source outputs*.
+    Standalone program that uses PulseAudio C API to send samples to the server.
 
-* *Source output*
+* **Source**
 
-    Pulseaudio module (shared library) that implements callbacks invoked when connected *source* generates more samples.
+    PulseAudio module (shared library) that runs a thread which implements timing and periodically generates samples and writes them to the connected source outputs.
 
-* *Sink*
+* **Source output**
 
-    Pulseaudio module (shared library) that runs thread which implements timing and periodically requests samples from connected *sink inputs*.
+    PulseAudio module (shared library) that implements callbacks invoked when a source generates more samples.
 
-* *Sink input*
+* **Sink**
 
-    Pulseaudio module (shared library) that implements callbacks invoked when connected *sink* needs more samples.
+    PulseAudio module (shared library) that runs a thread which implements timing and periodically requests samples from the connected sink inputs.
+
+* **Sink input**
+
+    PulseAudio module (shared library) that implements callbacks invoked when a sink needs more samples.
+
+### Sample format
 
 When reading or writing samples to files, these snippets always use the same format:
+
 * linear PCM;
 * two channels (front Left, front Right);
 * interleaved format (L R L R ...);
@@ -35,23 +42,25 @@ See also [`decode_play`](../decode_play) snippets which demonstrate decoding and
 
 ### Snippets
 
-* `pa_play_simple` - minimal playback client using [simple API](https://freedesktop.org/software/pulseaudio/doxygen/index.html#simple_sec)
+* `pa_dbus_print` - Python3 script that prints various server-side objects using the [D-Bus API](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/Developer/Clients/DBus/)
 
-* `pa_play_async_cb` - playback client using [async API](https://freedesktop.org/software/pulseaudio/doxygen/index.html#async_sec) and callbacks
+* `pa_play_simple` - minimal playback client using the [simple API](https://freedesktop.org/software/pulseaudio/doxygen/index.html#simple_sec)
 
-* `pa_play_async_poll` - playback client using [async API](https://freedesktop.org/software/pulseaudio/doxygen/index.html#async_sec) and polling
+* `pa_play_async_cb` - playback client using the [async API](https://freedesktop.org/software/pulseaudio/doxygen/index.html#async_sec) and callbacks
 
-* `pa_module_source` - minimal pulseaudio source that maintains fixed latency
+* `pa_play_async_poll` - playback client using the [async API](https://freedesktop.org/software/pulseaudio/doxygen/index.html#async_sec) and polling
 
-* `pa_module_source_output` - minimal pulseaudio source output
+* `pa_module_source` - minimal PulseAudio source that maintains fixed latency
 
-* `pa_module_sink_input` - minimal pulseaudio sink input
+* `pa_module_source_output` - minimal PulseAudio source output
 
-* `pa_module_sink` - minimal pulseaudio sink that maintains fixed latency
+* `pa_module_sink_input` - minimal PulseAudio sink input
+
+* `pa_module_sink` - minimal PulseAudio sink that maintains fixed latency
 
 ### Building
 
-To build clients, install pulseaudio headers and run:
+To build clients, install PulseAudio headers and run:
 
 ```
 $ make
@@ -70,6 +79,20 @@ Uninstall modules:
 
 ```
 $ make uninstall
+```
+
+### D-Bus clients
+
+Enable D-Bus API:
+
+```
+$ pactl load-module module-dbus-protocol
+```
+
+Print server-side objects:
+
+```
+$ ./pa_dbus_print.py
 ```
 
 ### Playback clients
