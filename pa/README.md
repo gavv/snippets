@@ -1,5 +1,7 @@
 # PulseAudio usage examples
 
+See these blog posts: [1](https://gavv.github.io/blog/pulseaudio-under-the-hood/), [2](https://gavv.github.io/blog/decode-play/).
+
 ### Overview
 
 There are several types of snippets here:
