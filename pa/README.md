@@ -1,6 +1,6 @@
 # PulseAudio usage examples
 
-See these blog posts: [1](https://gavv.github.io/blog/pulseaudio-under-the-hood/), [2](https://gavv.github.io/blog/decode-play/).
+See these articles: [1](https://gavv.github.io/articles/pulseaudio-under-the-hood/), [2](https://gavv.github.io/articles/decode-play/).
 
 ### Overview
 

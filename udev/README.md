@@ -1,3 +1,3 @@
 # libudev usage examples
 
-See details in the [blog post](https://enise.org/gavv/blog/libudev-usb/).
+See details in [this article](https://gavv.github.io/articles/libudev-usb/).

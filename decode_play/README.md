@@ -1,6 +1,6 @@
 # Decoding and playing audio file in Linux
 
-See details in the [blog post](https://enise.org/gavv/blog/decode-play/).
+See details in [this article](https://gavv.github.io/articles/decode-play/).
 
 ### Overview
 
