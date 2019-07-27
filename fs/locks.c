@@ -96,6 +96,7 @@ static void test_fcntl_linux(int fd) {
   fl.l_whence = SEEK_SET;
   fl.l_start = 0;
   fl.l_len = 0;
+  fl.l_pid = 0;
   if (fcntl(fd, F_OFD_SETLKW, &fl) == -1) {
     perror("fcntl");
     abort();
