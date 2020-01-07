@@ -67,7 +67,7 @@ int main(int argc, char** argv) {
     // format conetxt uses codec context when writing packets
     AVCodecContext* codec_ctx = stream->codec;
     assert(codec_ctx);
-    codec_ctx->codec_id = CODEC_ID_PCM_F32LE;
+    codec_ctx->codec_id = AV_CODEC_ID_PCM_F32LE;
     codec_ctx->codec_type = AVMEDIA_TYPE_AUDIO;
     codec_ctx->sample_fmt = AV_SAMPLE_FMT_FLT;
     codec_ctx->bit_rate = bitrate;
