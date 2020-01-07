@@ -65,6 +65,9 @@ pa_play_async_cb: pa_play_async_cb.c
 pa_play_async_poll: pa_play_async_poll.c
 	$(CC) $(CFLAGS) -o $@ $< -lpulse
 
+pa_record_simple: pa_record_simple.c
+	$(CC) $(CFLAGS) -o $@ $< -lpulse-simple -lpulse
+
 module-example-source.so: pa_module_source.c
 	$(CC) $(CFLAGS) $(PA_MOD_FLAGS) -o $@ $<
 

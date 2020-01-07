@@ -10,6 +10,10 @@ There are several types of snippets here:
 
     Standalone program that uses PulseAudio D-Bus API.
 
+* **Recording client**
+
+    Standalone program that uses PulseAudio C API to receive samples from the server.
+
 * **Playback client**
 
     Standalone program that uses PulseAudio C API to send samples to the server.
@@ -45,6 +49,8 @@ See also [`decode_play`](../decode_play) snippets which demonstrate decoding and
 ### Snippets
 
 * `pa_dbus_print` - Python3 script that prints various server-side objects using the [D-Bus API](https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/Developer/Clients/DBus/)
+
+* `pa_record_simple` - minimal recording client using the [simple API](https://freedesktop.org/software/pulseaudio/doxygen/index.html#simple_sec)
 
 * `pa_play_simple` - minimal playback client using the [simple API](https://freedesktop.org/software/pulseaudio/doxygen/index.html#simple_sec)
 

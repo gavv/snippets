@@ -1,3 +1,4 @@
+pa_record_simple
 pa_play_simple
 pa_play_async_cb
 pa_play_async_poll
